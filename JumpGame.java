@@ -20,14 +20,14 @@ public class JumpGame
 
 	public static boolean solve(int[] steps)
 	{
-		int sum = 0; 
+		int max = 0;  
 
 		for(int i = 0; i < steps.length; ++i)
 		{
-			if(steps[i] == 0 && sum <= i+1)
-				return false; 
+			max = Math.max(max,steps[i]+i);
+			if(i >= max)
+				return false;
 
-			sum += steps[i];
 		}
 
 		return true; 
