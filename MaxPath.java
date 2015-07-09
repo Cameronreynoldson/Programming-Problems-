@@ -52,5 +52,13 @@ public class MaxPath
  				dp[j] = matrix[i][j]+max;
  			}
  		}
+ 		
+ 		int maxPath = Integer.MIN_VALUE;
+ 		
+ 		for(int i = 0; i < dp.length; ++i)
+ 		{
+ 			maxPath = Math.max(maxPath,dp[i);
+ 		}
+ 		return maxPath; 
  	}
 }
