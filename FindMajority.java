@@ -31,6 +31,7 @@ public class FindMajority
 				if(countOfElement <= 0)
 				{
 					indexOfMajority = i; 
+					countOfElement = 1; 
 				}
 			}
 		}
