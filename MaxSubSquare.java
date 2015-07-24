@@ -18,8 +18,6 @@ public class MaxSubSquare
 				m[i][j] = scanner.nextInt();
 			}
 		}
-
-
 		solve(m);
 	}
 
