@@ -69,7 +69,3 @@ public class StringAdder
 		return max; 
 	}
 }
-
-
-//120 
-//93
