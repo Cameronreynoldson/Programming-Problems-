@@ -13,6 +13,40 @@ public class LinkedListPalindrome2
 		 head.next.next.next.next = new Node(3);
 		 System.out.println(isPalindrome(head));
 	}
+	
+	public static boolean isPalindromeSecond(Node head)
+	{
+		Node temp1 = head;
+		Node temp2 = head; 
+		return isPalindromeRecursive(temp1,temp2) != null;
+	}
+
+	private static Node isPalindromeRecursive(Node head, Node tail)
+	{
+		if(tail.next == null)
+		{
+			if(tail.val == head.val)
+			{
+				return head.next; 
+			}
+
+			return null;
+		}
+
+		Node compareTail = isPalindromeRecursive(head,tail.next);
+
+		if(compareTail.val == tail.val)
+		{
+			if(compareTail.next == null)
+			{
+				return compareTail; 
+			}
+
+			return compareTail.next;  
+		}
+
+		return null;
+	}
 
 //3 -> 2 -> 2 <- 2 <- 3
 	public static boolean isPalindrome(Node head)
