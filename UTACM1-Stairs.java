@@ -1,7 +1,7 @@
 //find the number of ways up to k values sum to n (can have duplicates)
 import java.util.*; 
 
-public class Stairs
+public class UTACM1-Stairs
 {
 	public static void main(String[] args)
 	{
