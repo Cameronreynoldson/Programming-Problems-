@@ -1,5 +1,6 @@
 import java.util.*; 
 
+//program to find the number of possible combinations for queens on a chessboard to be safe from each other
 public class NQueens
 {
 	public static void main(String[] args)
@@ -17,7 +18,7 @@ public class NQueens
 		}
 	}
 
-
+	//recursively check each column for each new row to see if it's valid and continue to new combinations
 	public static void nqueens(int length, Integer[] cols, int row, ArrayList<Integer[]> results)
 	{			
 		if(row == length)
@@ -38,9 +39,11 @@ public class NQueens
 		}
 	}
 
+
+	//check to see if a combination of (row,col) is valid given the current (row,col) pairs
 	public static boolean checkValid(Integer[] cols, int row, int col)
 	{
-		for(int i = 0; i < col; ++i)
+		for(int i = 0; i < row; ++i)
 		{
 			if(cols[i] == col)
 			{
