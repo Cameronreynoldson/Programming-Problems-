@@ -18,13 +18,16 @@ public class PalindromeAnagrams
 	}
 
 	public static void checkPal(String str)
-	{
+	{	
 		if(str.length() == 1)
 		{
 			System.out.println("0, "+1);
 			return; 
 		}
+		
 		int[] count = new int[256];
+		
+		//character count
 		for(int i = 0; i < str.length(); ++i)
 		{
 			count[str.charAt(i)-'a']++;
