@@ -34,7 +34,8 @@ public class PalindromeAnagrams
 		}	
 
 		int odd = 0; 
-
+		
+		//count number of odd occurrences 
 		for(int i = 0; i < 256; ++i)
 		{
 			if(count[i] % 2 != 0)
