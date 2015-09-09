@@ -71,7 +71,9 @@ public class PalindromeAnagrams
 			}
 		}
 	}
-
+	
+	//count the number of anagrams of a string
+	//that can be formed into a palindrome
 	public static int getNumberOfAnagrams(String s)
 	{
 		int[] count = new int[256];
