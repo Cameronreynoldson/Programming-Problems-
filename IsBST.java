@@ -1,20 +1,57 @@
-import java.util.*;
+import java.util.*; 
 
-public class IsBST
+public class IsBSTInOrder
 {
-
-	public boolean checkIfBST(Node node)
+	public static void main(String[] args)
 	{
-		if(node.left.data.compareTo(node.data) >= 0 || node.right.data.compareTo(node.data) <= 0)
+
+		int[] prev = new int[1];
+		Node root = new Node(5);
+		root.left = new Node(3);
+		root.right = new Node(1);
+		prev[0] = Integer.MIN_VALUE;
+		System.out.println(isBST(prev,root));
+
+	}
+
+	public static boolean isBST(int[] prev, Node node)
+	{
+		if(node == null)
+		{
+			return true; 
+		}
+
+		if(!isBST(prev,node.left))
+		{
 			return false; 
+		}
+
+		if(prev[0] >= node.value)
+		{
+			return false; 
+		}
 		else
 		{
-			if(!checkIfBST(node.right))
-				return false; 
-			if(!checkIfBST(node.left))
-				return false;
+			prev[0] = node.value;
+		}
+		
+		if(!isBST(prev,node.right))
+		{
+			return false; 
 		}
 
 		return true; 
+	}	
+}
+
+class Node
+{
+	int value; 
+	Node left; 
+	Node right; 
+
+	public Node(int v)
+	{
+		value = v; 
 	}
 }
