@@ -8,34 +8,34 @@ public class IsBSTInOrder
 		int[] prev = new int[1];
 		Node root = new Node(5);
 		root.left = new Node(3);
-		root.right = new Node(1);
-		prev[0] = Integer.MIN_VALUE;
-		System.out.println(isBST(prev,root));
+		root.right = new Node(10);
+		System.out.println(isBST(prev,root,false));
 
 	}
 
-	public static boolean isBST(int[] prev, Node node)
+	public static boolean isBST(int[] prev, Node node, boolean started)
 	{
 		if(node == null)
 		{
 			return true; 
 		}
 
-		if(!isBST(prev,node.left))
+		if(!isBST(prev,node.left,started))
 		{
 			return false; 
 		}
 
-		if(prev[0] >= node.value)
+		if(started && prev[0] >= node.value)
 		{
 			return false; 
 		}
 		else
 		{
 			prev[0] = node.value;
+			started = true; 
 		}
 		
-		if(!isBST(prev,node.right))
+		if(!isBST(prev,node.right,started))
 		{
 			return false; 
 		}
