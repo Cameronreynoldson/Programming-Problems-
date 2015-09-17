@@ -21,6 +21,7 @@ public static boolean isBST( Node node, int[] prev, boolean[] started)
 		}
 
 		prev[0] = node.value;
+		
 		return isBST(node.right, prev, started));
 	}	
 }
