@@ -9,6 +9,7 @@ public static boolean isBST( Node node, int[] prev, boolean[] started)
 		{
 			return false;
 		}
+		
 		if(!started[0])
 		{
 			started[0] = true;
