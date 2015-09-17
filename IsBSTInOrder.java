@@ -14,6 +14,7 @@ public static boolean isBST( Node node, int[] prev, boolean[] started)
 		{
 			started[0] = true;
 		}
+		
 		else if (node.value <= prev[0])
 		{
 			return false;
