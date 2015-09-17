@@ -4,6 +4,7 @@ public static boolean isBST( Node node, int[] prev, boolean[] started)
 		{
 			return true;
 		}
+		
 		if(!isBST(node.left, prev, started))
 		{
 			return false;
