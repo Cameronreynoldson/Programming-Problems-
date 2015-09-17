@@ -1,5 +1,5 @@
 //turn a binary search tree into a doubly linkedlist
-
+//incorrect implementation, will change
 public class BSTtoLL
 {		
 	public static void main(String[] args)
