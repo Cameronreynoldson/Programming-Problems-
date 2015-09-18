@@ -11,7 +11,9 @@ public class Teams
 		{
 			int sum = scanner.nextInt()+scanner.nextInt()+scanner.nextInt();
 			if(sum >= 2)
+			{
 				problems++;
+			}
 		}
 		System.out.println(problems);
 	}
