@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Q2
+public class CreditCards
 {
 	public static void main(String[] args)
 	{
