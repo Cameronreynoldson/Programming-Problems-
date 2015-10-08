@@ -2,7 +2,8 @@ import java.util.*;
 
 public class Wiki
 {
-	public int clicks(Page source, Page destination)
+
+	public static int clicks(Page source, Page destination)
 	{
 		Queue<Page> q = new LinkedList<Page>();
 
@@ -20,7 +21,7 @@ public class Wiki
 
 				if(current == destination) //if we've reached the destination
 				{
-					return counter; 
+					return clicks; 
 				}
 
 				ArrayList<Page> pages = current.getPages(); 
