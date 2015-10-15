@@ -1,5 +1,5 @@
 import java.util.*;
-//knapsack in nlogn using memoization
+
 class Item
 {
 	int weight;
@@ -25,6 +25,12 @@ public class KnapsackRecursion
 		bag[2] = c;
 		bag[3] = d;
 		bag[4] = e;
+		Arrays.sort(bag, new Comparator<Item>(){
+			public int compare(Item a, Item b)
+			{
+				return a.weight-b.weight;
+			}
+		});
 		HashMap<Integer,Integer> memo = new HashMap<Integer,Integer>();
 		System.out.println(knapsack(bag,bag.length-1,6,memo));
 	}
