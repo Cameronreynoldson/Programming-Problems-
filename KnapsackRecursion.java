@@ -14,11 +14,11 @@ public class KnapsackRecursion
 {
 	public static void main(String[] args)
 	{
-		Item a = new Item(2,4);
+		Item a = new Item(1,1);
 		Item b = new Item(1,2);
-		Item c = new Item(4,5);
-		Item d = new Item(3,3);
-		Item e = new Item(6,20);
+		Item c = new Item(1,3);
+		Item d = new Item(1,4);
+		Item e = new Item(1,5);
 		Item[] bag = new Item[5];
 		bag[0] = a;
 		bag[1] = b;
@@ -28,6 +28,8 @@ public class KnapsackRecursion
 		Arrays.sort(bag, new Comparator<Item>(){
 			public int compare(Item a, Item b)
 			{
+				if(a.weight == b.weight)
+					return a.value-b.value;
 				return a.weight-b.weight;
 			}
 		});
@@ -46,8 +48,8 @@ public class KnapsackRecursion
 		if(index == 0)
 			return bag[0].value;
 
-		if(memo.containsKey(weight))
-			return memo.get(weight);
+		if(memo.containsKey(index))
+			return memo.get(index);
 
 		int sum = bag[index].value;
 
@@ -59,7 +61,7 @@ public class KnapsackRecursion
 
 		int max = Math.max(chooseItem + sum,dontChoose);
 
-		memo.put(weight,max);
+		memo.put(index,max);
 
 		return max;
 	}
@@ -72,7 +74,7 @@ public class KnapsackRecursion
 		int high = index; 
 		int low = 0;
 		int maxIndex = -1;
-		int maxWeight = 0;
+		int maxVal = 0;
 		int mid = low + (high - low) / 2; 
 		while(low <= high)
 		{
@@ -80,10 +82,11 @@ public class KnapsackRecursion
 
 			if(currentWeight <= weight)
 			{
-				if(currentWeight > maxWeight && mid >= maxIndex)
+				int currentVal = bag[mid].value;
+				if(currentVal > maxVal && mid >= maxIndex)
 				{
 					maxIndex = mid;
-					maxWeight = currentWeight;
+					maxVal = currentVal;
 				}
 
 				low = mid+1;
